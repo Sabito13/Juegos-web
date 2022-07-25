@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra-Papel-Tijera</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div id="contenedor" class="contenedor">
+        <div class="jugador-piedra" onclick="jugar('1')">
+            <img src="./varios/piedra-der.png" alt="piedra">
+        </div>
+        <div class="jugador-papel" onclick="jugar('2')">
+            <img src="./varios/papel-der.png" alt="papel">
+        </div>
+        <div class="jugador-tijera" onclick="jugar('3')">
+            <img src="./varios/tijera-der.png" alt="tijera">
+        </div>
+        <div class="tabla-jugar">
+            <div class="tabla-jugador"></div>
+            <div class="tabla-maquina"></div>
+        </div>
+        <div class="puntaje">
+            <div class="puntaje-jugador">Jugador 0</div>
+            <div class="puntaje-maquina">Maquina 0</div>
+        </div>
+        <!--<div class="maquina-piedra">
+            <img src="./varios/piedra-izq.png" alt="piedra">
+        </div>
+        <div class="maquina-papel">
+            <img src="./varios/papel-izq.png" alt="piedra">
+        </div>
+        <div class="maquina-tijera">
+            <img src="./varios/tijera-izq.png" alt="piedra">
+        </div>-->
+    </div>
+</body>
+</html>

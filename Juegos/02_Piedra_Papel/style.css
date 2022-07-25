@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+}
+img{
+    width: 140px;
+    position: absolute;
+    object-fit: contain;
+}
+
+.contenedor{
+    margin: 0 auto;
+    max-width: 500px;
+    min-width:500px;
+
+    min-height: 400px;
+
+    background-color: black;
+    border: 1px solid rgb(2, 2, 2);
+}
+
+.contenedor > *{
+    border: 2px solid black;
+    position: relative;
+    background-color: white;
+}
+
+.jugador-piedra{
+grid-area: jugador-piedra;
+}
+.jugador-papel{
+grid-area: jugador-papel;
+}
+.jugador-tijera{
+    grid-area: jugador-tijera;
+}
+
+.tabla-jugar{
+    grid-area: tabla-jugar;
+}
+
+.puntaje{
+    grid-area: puntaje;
+}
+
+
+.contenedor{
+    display: grid;
+    gap: 5px 10px;
+    grid-template-rows: 1fr 200px 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "jugador-piedra jugador-papel jugador-tijera"
+    "tabla-jugar tabla-jugar tabla-jugar"
+    "puntaje puntaje puntaje";
+}
+
+.tabla-jugar{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border: none;
+    
+}
+
+.tabla-jugar>*{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+
+.puntaje{
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+}
+
+.enJuego{
+    width: 200px;
+}
+
+@media (max-width:500px) {
+    .contenedor{
+        margin-top: 20px;
+        min-height: 300px;
+
+        min-width: 300px;
+
+        grid-template-rows: 1fr 150px 30px;
+    }
+
+    img{
+        width: 80px;
+        position: absolute;
+        object-fit: contain;
+    }
+    .enJuego{
+        object-fit: contain;
+        width: 150px;
+    }
+}
