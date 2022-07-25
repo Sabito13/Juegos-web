@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    grid-area:header ;
+}
+.search{
+    grid-area: search;
+}
+
+.navbar{
+    grid-area:navbar ;
+}
+
+.categorias-juegos{
+    grid-area:categorias-juegos ;
+}
+
+.inicio{
+    grid-area:inicio ;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+
+
+
+
+
+.contenedor{
+    display: grid;
+
+    min-width: 400px; ;
+    min-height: 100vh;
+  
+
+    grid-template-rows:40px 1fr 40px ;
+    grid-template-columns:40px minmax(10px,30px) 1fr  1fr;
+
+    grid-template-areas: "header search search navbar"
+    "categorias-juegos categorias-juegos inicio inicio"
+    "footer  footer  footer  footer";
+}
+
+.contenedor>*{
+    border: 1px solid black;
+}
+
+
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+}
