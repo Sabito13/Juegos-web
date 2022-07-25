@@ -14,36 +14,32 @@ body{
     grid-area:navbar ;
 }
 
-.categorias-juegos{
-    grid-area:categorias-juegos ;
+.muestreo-juegos{
+    grid-area:muestreo-juegos ;
 }
 
-.inicio{
-    grid-area:inicio ;
+.juego-completo{
+    grid-area:juego-completo ;
 }
 
 .footer{
     grid-area: footer;
 }
 
-
-
-
-
-
 .contenedor{
     display: grid;
 
-    min-width: 400px; ;
-    min-height: 100vh;
-  
+    min-width: 400px; 
+    min-height: 100vh;  
 
-    grid-template-rows:40px 1fr 40px ;
-    grid-template-columns:40px minmax(10px,30px) 1fr  1fr;
+    grid-template-rows:60px 1fr 1fr 60px ;
+    grid-template-columns:100px 300px 1fr ;
 
-    grid-template-areas: "header search search navbar"
-    "categorias-juegos categorias-juegos inicio inicio"
-    "footer  footer  footer  footer";
+    grid-template-areas: 
+    "header search navbar "
+    "muestreo-juegos muestreo-juegos muestreo-juegos"
+    "juego-completo juego-completo juego-completo "
+    "footer  footer  footer ";
 }
 
 .contenedor>*{
@@ -54,4 +50,21 @@ body{
 .navbar ul{
     display: flex;
     justify-content: space-around;
+}
+
+.muestreo-juegos{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+
+}
+
+.muestreo-juegos >*{
+    border: 1px solid black;
+    padding: 40px;
+}
+
+
+img {
+    width: 200px;
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
 </head>
-<body>
+<body onload="iniciar()">
     <div class="contenedor">
         <header class="header">Easy</header>
 
@@ -18,26 +18,24 @@
             <ul>
                 <li><a href="">Inicio</a></li>
                 <li><a href="">Juegos</a></li>
-                <li><a href="">i dont know</a></li>
+                <li><a href="">Contacto</a></li>
             </ul>
         </nav>
 
-        <div class="inicio">
-            <h1>Contenido principal</h1>
-            <iframe src="./Juegos/01_Tateti/index.html" width="260" height="250" allow="fullscreen"></iframe>
-            <iframe src="./Juegos/01_Tateti/index.html" width="260" height="250" allow="fullscreen"></iframe>
-            <iframe src="./Juegos/01_Tateti/index.html" width="260" height="250" allow="fullscreen"></iframe>
-            <iframe src="./Juegos/01_Tateti/index.html" width="260" height="250" allow="fullscreen"></iframe>
-            <iframe src="./Juegos/01_Tateti/index.html" width="260" height="250" allow="fullscreen"></iframe>
-            <iframe src="./Juegos/01_Tateti/index.html" width="260" height="250" allow="fullscreen"></iframe>        
+        <div class="muestreo-juegos">
+            <div onclick="trasladarJuegos(-1)" >Flecha izquierda</div>
+            <div class="muestreo-juego-pos-1" onclick="elegirJuego(1)">default</div>
+            <div class="muestreo-juego-pos-2" onclick="elegirJuego(2)">default</div>
+            <div class="muestreo-juego-pos-3" onclick="elegirJuego(3)">default</div>
+            <div class="muestreo-juego-pos-4" onclick="elegirJuego(4)">default</div>
+            <div onclick="trasladarJuegos(1)">Flecha Derecha</div>
         </div>
 
-        <div class="categorias-juegos">
-            <div>Accion</div>
-            <div>puzle</div>
-            <div>estrategia</div>
+        <div class="juego-completo">
+            <iframe src="./Juegos/01_Tateti/index.html" width="350" height="350" allow="fullscreen"></iframe>
+            <iframe src="./Juegos/02_Piedra_Papel/index.html" width="350" height="350" allow="fullscreen"></iframe>        
         </div>
-        
+
         <footer class="footer">Footer</footer>
     </div> 
 </body>
