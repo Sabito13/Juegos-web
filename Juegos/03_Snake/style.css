@@ -1,0 +1,33 @@
+body{
+    margin:0;
+    padding: 0;
+}
+
+
+.contenedor{
+    margin: 0 auto;
+
+    width: 600px;
+    height: 550px;
+
+    background-color: black;
+
+    display: grid;
+    grid-template-rows: repeat(10,auto);
+    grid-template-columns: repeat(10,auto);
+}
+
+.contenedor >*{
+    padding: 10px;
+    background-color: black;
+}
+
+.puntaje{
+    margin: 0 auto;
+
+    max-width: 500px;
+    min-width:500px;
+    text-align: center;
+
+    font-size: 40px;
+}

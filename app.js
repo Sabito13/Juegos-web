@@ -1,5 +1,6 @@
 let muestreoJuegos = []
 let juegos = []
+let overflow = true
 
 
 class Juego {
@@ -32,12 +33,12 @@ class Juego {
         }
 
     setJugable(){
-        const juegoCompleto =document.querySelector(".juego-completo")
+        const juegoElegido =document.querySelector(".juego-elegido")
         const juegoFrame = document.createElement('iframe')
         juegoFrame.setAttribute('src',this.html)
-        console.log
-        juegoCompleto.textContent = ''
-        juegoCompleto.appendChild(juegoFrame)
+    
+        juegoElegido.textContent = ''
+        juegoElegido.appendChild(juegoFrame)
     }
     }
 
@@ -53,15 +54,8 @@ const iniciar = ()=>{
     }
 
 
-    juegos.push(new Juego('Tateti',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/01_Tateti.png'))
-
-    for (let index = 0; index < 20; index+=2) {
-            juegos.push(new Juego('Tateti',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/01_Tateti.png',"./Juegos/01_Tateti/index.html"))
-            juegos.push(new Juego())
-    }
-
+    guardarJuegosCreados()
     trasladarJuegos(0)
-    
 }
 
 
@@ -97,3 +91,45 @@ const elegirJuego = (posicion) =>{
 
 }
 
+
+
+const guardarJuegosCreados =() =>{
+    juegos.push(new Juego('Tres en raya',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/01_Tateti.png',"./Juegos/01_Tateti/index.html"))
+    juegos.push(new Juego('Piedra Papel Tijera',['ingenio','destreza'],'24/7/2022','facil','./Imagenes/02_Piedra_papel.png',"./Juegos/02_Piedra_Papel/index.html"))
+    juegos.push(new Juego('Snake',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/03_Snake/index.html"))
+
+
+    for (let index = 0; index < 20; index+=2) {
+        juegos.push(new Juego('Tres en raya',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/01_Tateti.png',"./Juegos/01_Tateti/index.html"))
+        juegos.push(new Juego('Piedra Papel Tijera',['ingenio','destreza'],'24/7/2022','facil','./Imagenes/02_Piedra_papel.png',"./Juegos/02_Piedra_Papel/index.html"))
+        juegos.push(new Juego('Snake',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/03_Snake/index.html"))
+            juegos.push(new Juego())
+    }
+
+}
+
+
+const pantallaEstatica=()=>{
+    const body = document.querySelector('body')
+    const bloquear = document.querySelector('.juego-completo-bloquear')
+    if(overflow){
+        bloquear.textContent='Desbloquear pantalla'
+        body.style.overflow = 'hidden'
+        overflow = false
+    }else{
+        bloquear.textContent='Bloquear pantalla'
+        body.style.overflow = 'auto'
+        overflow = true
+    }
+    
+
+
+}
+
+
+
+const buscarJuego = (event)=>{
+    event.preventDefault()
+    const{value} = event.target.juegoBuscado
+    console.log(value)
+}

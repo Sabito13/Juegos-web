@@ -12,7 +12,12 @@
     <div class="contenedor">
         <header class="header">Easy</header>
 
-        <div class="search">Buscador</div>
+        <div class="search">
+            <form action="" onsubmit="buscarJuego(event)">
+            <input type="text" name="juegoBuscado" placeholder="Buscar Juegos" autocomplete="off">
+            <input type="submit" value="Buscar">
+            </form>
+        </div>
 
         <nav class="navbar">
             <ul>
@@ -32,8 +37,10 @@
         </div>
 
         <div class="juego-completo">
-            <iframe src="./Juegos/01_Tateti/index.html" width="350" height="350" allow="fullscreen"></iframe>
-            <iframe src="./Juegos/02_Piedra_Papel/index.html" width="350" height="350" allow="fullscreen"></iframe>        
+            <div class="juego-completo-bloquear" onclick="pantallaEstatica()">Bloquear Pantalla</div>
+            <div class="juego-elegido" onclick="pantallaEstatica()">
+            <iframe src="./Juegos/01_Tateti/index.html"  allow="fullscreen"></iframe>
+            </div>
         </div>
 
         <footer class="footer">Footer</footer>
