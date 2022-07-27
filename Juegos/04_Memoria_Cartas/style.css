@@ -1,0 +1,76 @@
+body{
+    margin:0;
+    padding: 0;
+    border: 0;
+}
+
+
+.contenedor{
+    margin: 0 auto;
+
+    max-width: 600px;
+    max-height: 600px;
+    min-width: 300px;
+   
+
+
+    gap: 2px;
+    background-color: white;
+
+    display: grid;
+    grid-template-rows: repeat(6,minmax(45px, 90px));
+    grid-template-columns: repeat(6,minmax(30px, 90px));
+}
+
+.contenedor >*{
+    background-color: black;
+}
+.contenedor div img{
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 90px;
+    max-height: 90px;
+}
+
+@media(max-width: 300px){
+    .contenedor div img{
+        width: 45px;
+        height: 45px;
+    } 
+
+    .contenedor{
+        height: 300px;
+        grid-template-columns: repeat(6,45px);
+    } 
+
+    
+}
+
+
+
+
+.puntaje-tiempo{
+    margin: 0 auto;
+
+    max-width: 500px;
+    min-width:500px;
+    
+    display: flex;
+    justify-content: space-around;
+    
+
+    font-size: 40px;
+}
+
+
+.tapar-carta > img{
+    /*filter:alpha(opacity=50);
+    -moz-opacity: 50;]*/
+    opacity: 0;
+}
+
+.destapar-carta > img{
+
+    opacity: 1;
+
+}
