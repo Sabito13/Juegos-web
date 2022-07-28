@@ -112,7 +112,7 @@ if(contAccesos == 0){
             }
             cElegida = []
             contAccesos =0
-    },2000)
+    },1000)
 }
     
     

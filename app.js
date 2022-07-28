@@ -94,16 +94,12 @@ const elegirJuego = (posicion) =>{
 
 
 const guardarJuegosCreados =() =>{
-    juegos.push(new Juego('Tres en raya',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/01_Tateti.png',"./Juegos/01_Tateti/index.html"))
-    juegos.push(new Juego('Piedra Papel Tijera',['ingenio','destreza'],'24/7/2022','facil','./Imagenes/02_Piedra_papel.png',"./Juegos/02_Piedra_Papel/index.html"))
-    juegos.push(new Juego('Snake',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/03_Snake/index.html"))
-
 
     for (let index = 0; index < 20; index+=2) {
         juegos.push(new Juego('Tres en raya',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/01_Tateti.png',"./Juegos/01_Tateti/index.html"))
         juegos.push(new Juego('Piedra Papel Tijera',['ingenio','destreza'],'24/7/2022','facil','./Imagenes/02_Piedra_papel.png',"./Juegos/02_Piedra_Papel/index.html"))
         juegos.push(new Juego('Snake',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/03_Snake/index.html"))
-            juegos.push(new Juego())
+        juegos.push(new Juego('Memoria cartas',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/04_Memoria_Cartas/index.html"))
     }
 
 }
