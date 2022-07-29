@@ -100,6 +100,7 @@ const guardarJuegosCreados =() =>{
         juegos.push(new Juego('Piedra Papel Tijera',['ingenio','destreza'],'24/7/2022','facil','./Imagenes/02_Piedra_papel.png',"./Juegos/02_Piedra_Papel/index.html"))
         juegos.push(new Juego('Snake',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/03_Snake/index.html"))
         juegos.push(new Juego('Memoria cartas',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/04_Memoria_Cartas/index.html"))
+        juegos.push(new Juego('Descubre_la_Palabra',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/05_Descubre_la_Palabra/index.html"))
     }
 
 }

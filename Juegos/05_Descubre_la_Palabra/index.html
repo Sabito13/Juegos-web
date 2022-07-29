@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre la palabra</title>
+
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="iniciar(true)">
+    <div class="contenedor">
+        <div class="intentos">intentos restantes   10</div>
+        <div class="palabra-incompleta"></div>
+        <div class="palabra-letra">
+            <form action="" onsubmit="ingresarLetra(event)">
+                <input class="letraInput" type="text" name="letra" placeholder="" autocomplete="off" max="1">
+                <input  class="letraBoton" type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
