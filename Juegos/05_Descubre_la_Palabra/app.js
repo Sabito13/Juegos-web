@@ -88,5 +88,5 @@ const verificarGanador =()=>{
 
 const reiniciar = ()=>{
     setTimeout(()=>{ 
-        iniciar()},2000)
+        iniciar(true)},2000)
 }

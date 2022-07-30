@@ -1,6 +1,8 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #454545;
+    color: white;
 }
 
 .header{
@@ -33,7 +35,7 @@ body{
     min-height: 100vh;  
 
     gap: 10px 0px;
-    grid-template-rows:60px 400px auto 60px ;
+    grid-template-rows:60px 300px auto 60px ;
     grid-template-columns:100px 300px 1fr ;
 
     grid-template-areas: 
@@ -43,15 +45,47 @@ body{
     "footer  footer  footer ";
 }
 
-.contenedor>*{
-    border: 1px solid black;
+
+/*Barra de navegacion*/
+.navbar,.header,.search{
+    background-color: #269fac;
+}
+
+.header >*{
+    margin: auto;
+}
+
+/*Barra de navegacion buscador*/
+.search form{
+    margin: 10px 10px;
+    height: 50px;
+}
+
+.search form > *{
+    height: 30px;
 }
 
 
+/*Barra de navegacion links*/
 .navbar ul{
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+    margin-top: 0%;
+}
+.navbar ul>*{
+    display: inline-block;
+    padding: 21px;
+}
+.nav-ul-inicio:hover{
+    background-color: #20737c;
+   }
+
+.nav-ul-juegos:hover{
+    background-color: #20737c;
+}
+.nav-ul-contacto:hover{
+    background-color: #20737c;
 }
 
 a{
@@ -59,31 +93,68 @@ a{
     text-decoration: none;
 }
 
-.muestreo-juegos{
+
+/*Lista de juegos horizontal---------------------------------------*/
+.muestreo-juegos {
+    display: flex;
+    justify-content:stretch;
+    align-items:center;
+    margin: 0 auto;
+
+}
+
+.contenedor-imagenes{
     display: flex;
     justify-content: space-around;
     align-items:center;
 
 }
 
-.muestreo-juegos >*{
+.contenedor-imagenes >*{
     border: 1px solid black;
-    padding: 40px;
 }
-
 
 img {
     width: 200px;
+    height: 200px;
+}
+.flecha-izquierda,.flecha-derecha{
+    height: 150px;
+    width: 40px;
 }
 
+.muestreo-juego-pos-1 img:hover{
+    width: 250px; 
+    height: 250px;
+}
+
+.muestreo-juego-pos-2 img:hover{
+    width: 250px; 
+    height: 250px;
+}
+
+.muestreo-juego-pos-3 img:hover{
+    width: 250px; 
+    height: 250px;
+}
+
+.muestreo-juego-pos-4 img:hover{
+    width: 250px; 
+    height: 250px;
+}
+
+/*Juego elegido ------------------------------------------------*/
 .juego-completo{
     display: flex;
 }
 
 .juego-completo-bloquear{
-    width: 80px;
-    height: 50px;
-    border: 1px solid black;
+    width: 90px;
+    height: 40px;
+    border: 1px solid rgb(231, 13, 13);
+    border-radius:10px ;
+    text-align: center;
+    background-color:#269fac ;
 }
 
 .juego-elegido{
@@ -95,16 +166,13 @@ img {
 .juego-elegido iframe{
     width: 600px;
     height:600px;
-
 }
 
-.search form{
-    margin: 10px 10px;
-    height: 50px;
+
+/*Footer------------------------------------------------------*/
+.footer{
+    background-color: rgb(228, 59, 59);
 }
 
-.search form > *{
-    height: 30px;
-}
 
 

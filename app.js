@@ -1,7 +1,7 @@
 let muestreoJuegos = []
 let juegos = []
 let overflow = true
-
+let punteroPosicion = 0;
 
 class Juego {
     constructor(
@@ -10,7 +10,7 @@ class Juego {
         fecha = '-',
         dificultad = '-',
         imagen = '-',
-        html 
+        html,
     ) {
         this.id = juegos.length+1
         this.nombre = nombre
@@ -40,28 +40,28 @@ class Juego {
         juegoElegido.textContent = ''
         juegoElegido.appendChild(juegoFrame)
     }
-    }
-
-
-
-
-punteroPosicion = 0;
+}
 
 const iniciar = ()=>{
     for (let i=1;i<5;i++) {
         muestreoJuegos.push(document.querySelector(`.muestreo-juego-pos-${i}`))
         //muestreoJuegos[i-1].textContent = juegos[punteroPosicion+(i-1)]
     }
-
-
     guardarJuegosCreados()
     trasladarJuegos(0)
 }
 
-
+const guardarJuegosCreados =() =>{
+    for (let index = 0; index < 10; index+=2) {
+        juegos.push(new Juego('Tres en raya',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/01_Tateti.png',"./Juegos/01_Tateti/index.html"))
+        juegos.push(new Juego('Piedra Papel Tijera',['ingenio','destreza'],'24/7/2022','facil','./Imagenes/02_Piedra_papel.png',"./Juegos/02_Piedra_Papel/index.html"))
+        juegos.push(new Juego('Snake',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/03_Snake/index.html"))
+        juegos.push(new Juego('Memoria cartas',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/04_Memoria_Cartas.png',"./Juegos/04_Memoria_Cartas/index.html"))
+        juegos.push(new Juego('Descubre_la_Palabra',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/05_Descubre_palabra.png',"./Juegos/05_Descubre_la_Palabra/index.html"))
+    }
+}
 
 const trasladarJuegos = (direccion) =>{
-
     if (direccion == -1) {
         punteroPosicion--   
     }else if(direccion == 1){
@@ -88,21 +88,6 @@ const elegirJuego = (posicion) =>{
     }else if(posicion ==4){
         juegos[(punteroPosicion+3)%(juegos.length)].setJugable()
     }
-
-}
-
-
-
-const guardarJuegosCreados =() =>{
-
-    for (let index = 0; index < 20; index+=2) {
-        juegos.push(new Juego('Tres en raya',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/01_Tateti.png',"./Juegos/01_Tateti/index.html"))
-        juegos.push(new Juego('Piedra Papel Tijera',['ingenio','destreza'],'24/7/2022','facil','./Imagenes/02_Piedra_papel.png',"./Juegos/02_Piedra_Papel/index.html"))
-        juegos.push(new Juego('Snake',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/03_Snake/index.html"))
-        juegos.push(new Juego('Memoria cartas',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/04_Memoria_Cartas/index.html"))
-        juegos.push(new Juego('Descubre_la_Palabra',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/05_Descubre_la_Palabra/index.html"))
-    }
-
 }
 
 
@@ -118,11 +103,7 @@ const pantallaEstatica=()=>{
         body.style.overflow = 'auto'
         overflow = true
     }
-    
-
-
 }
-
 
 
 const buscarJuego = (event)=>{
@@ -130,3 +111,4 @@ const buscarJuego = (event)=>{
     const{value} = event.target.juegoBuscado
     console.log(value)
 }
+

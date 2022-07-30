@@ -10,7 +10,9 @@
 </head>
 <body onload="iniciar()">
     <div class="contenedor">
-        <header class="header">Easy</header>
+        <header class="header">
+            <div>Pagina</div>
+        </header>
 
         <div class="search">
             <form action="" onsubmit="buscarJuego(event)">
@@ -21,19 +23,21 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Juegos</a></li>
-                <li><a href="">Contacto</a></li>
+                <li class="nav-ul-inicio"><a href="">Inicio</a></li>
+                <li class="nav-ul-juegos"><a href="">Juegos</a></li>
+                <li class="nav-ul-contacto"><a href="">Contacto</a></li>
             </ul>
         </nav>
 
         <div class="muestreo-juegos">
-            <div onclick="trasladarJuegos(-1)" >Flecha izquierda</div>
-            <div class="muestreo-juego-pos-1" onclick="elegirJuego(1)">default</div>
-            <div class="muestreo-juego-pos-2" onclick="elegirJuego(2)">default</div>
-            <div class="muestreo-juego-pos-3" onclick="elegirJuego(3)">default</div>
-            <div class="muestreo-juego-pos-4" onclick="elegirJuego(4)">default</div>
-            <div onclick="trasladarJuegos(1)">Flecha Derecha</div>
+            <button role="button" class="flecha-izquierda" onclick="trasladarJuegos(-1)"> < </button>
+            <div class="contenedor-imagenes">
+                <div class="muestreo-juego-pos-1" onclick="elegirJuego(1)" >default</div>
+                <div class="muestreo-juego-pos-2" onclick="elegirJuego(2)" >default</div>
+                <div class="muestreo-juego-pos-3" onclick="elegirJuego(3)" >default</div>
+                <div class="muestreo-juego-pos-4" onclick="elegirJuego(4)" >default</div>
+            </div>
+            <button role="button" class="flecha-derecha" onclick="trasladarJuegos(1)">></i></button>
         </div>
 
         <div class="juego-completo">
