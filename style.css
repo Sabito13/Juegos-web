@@ -35,7 +35,7 @@ body{
     min-height: 100vh;  
 
     gap: 10px 0px;
-    grid-template-rows:60px 300px auto 60px ;
+    grid-template-rows:60px 400px auto 60px ;
     grid-template-columns:200px 300px 1fr ;
 
     grid-template-areas: 
@@ -120,12 +120,21 @@ a{
     display: flex;
     justify-content: space-around;
     align-items:center;
-
 }
 
-.contenedor-imagenes >*{
-    border: 1px solid black;
-}
+.contenedor-imagenes > * {
+    margin: 0 2px;
+} 
+
+.contenedor-imagenes > * > *{
+    border: 1px solid rgb(0, 0, 0); 
+} 
+
+.contenedor-imagenes > * > div{
+    background-color: #20737c;
+    font-size: 20px;
+    text-align: center;
+} 
 
 .muestreo-juego-pos-1 img,.muestreo-juego-pos-2 img,
 .muestreo-juego-pos-3 img,.muestreo-juego-pos-4 img{
@@ -185,8 +194,33 @@ a{
 
 /*Footer------------------------------------------------------*/
 .footer{
-    background-color: rgb(228, 59, 59);
+    background-color: #269fac;
 }
 
+.informacion-contacto {
+    display: flex;
+    justify-content: space-around;
+}
 
+.informacion-contacto >* {
+    list-style-type: none;
+    margin: 0;
+    font-size: 20px;
+}
+
+/*Resultados de busqueda con formulario*/
+.resultados-busqueda{
+    position: relative;
+    color: black;
+    top: -30px;
+    left: 22px;
+    width:182px ;
+    background-color: white;
+    z-index: 10;
+}
+
+.resultados-busqueda ul{
+   list-style-type: none;
+   padding: 0;
+}
 

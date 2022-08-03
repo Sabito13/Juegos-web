@@ -2,6 +2,8 @@ let muestreoJuegos = []
 let juegos = []
 let overflow = true
 let punteroPosicion = 0;
+const inputForm = document.querySelector('.in-buscador')
+
 
 class Juego {
     constructor(
@@ -49,6 +51,7 @@ const iniciar = ()=>{
     }
     guardarJuegosCreados()
     trasladarJuegos(0)
+    inputForm.addEventListener('keyup',buscarJuego)
 }
 
 const guardarJuegosCreados =() =>{
@@ -57,7 +60,7 @@ const guardarJuegosCreados =() =>{
         juegos.push(new Juego('Piedra Papel Tijera',['ingenio','destreza'],'24/7/2022','facil','./Imagenes/02_Piedra_papel.png',"./Juegos/02_Piedra_Papel/index.html"))
         juegos.push(new Juego('Snake',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/03_Snake.png',"./Juegos/03_Snake/index.html"))
         juegos.push(new Juego('Memoria cartas',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/04_Memoria_Cartas.png',"./Juegos/04_Memoria_Cartas/index.html"))
-        juegos.push(new Juego('Descubre_la_Palabra',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/05_Descubre_palabra.png',"./Juegos/05_Descubre_la_Palabra/index.html"))
+        juegos.push(new Juego('Descubre la Palabra',['ingenio','destreza'],'23/7/2022','facil','./Imagenes/05_Descubre_palabra.png',"./Juegos/05_Descubre_la_Palabra/index.html"))
     }
 }
 
@@ -106,9 +109,32 @@ const pantallaEstatica=()=>{
 }
 
 
+const vaciarResultados =() =>{
+   const resultadosBusqueda = document.querySelector('.resultados-busqueda')
+   resultadosBusqueda.textContent = ''
+}
+
 const buscarJuego = (event)=>{
     event.preventDefault()
-    const{value} = event.target.juegoBuscado
-    console.log(value)
+    //console.log(formulario.value)
+    value = inputForm.value
+    const resultadosBusqueda = document.querySelector('.resultados-busqueda')
+    resultadosBusqueda.textContent = ''
+    if(inputForm.value != ''){
+        let juegosCumplen = juegos.filter(juego => juego.nombre.toLowerCase().includes(value))
+        let ul = document.createElement('ul')
+
+        juegosCumplen.forEach(juego =>{
+            let li = document.createElement('li')
+            let link = document.createElement('a')
+            link.setAttribute('href',juego.html)
+            link.textContent = juego.nombre
+
+            li.appendChild(link)
+            ul.appendChild(li)
+        })
+    
+        resultadosBusqueda.appendChild(ul)
+    }
 }
 

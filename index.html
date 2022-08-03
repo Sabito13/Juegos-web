@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </head>
 <body onload="iniciar()">
     <div class="contenedor">
@@ -19,16 +19,19 @@
 
         <div class="search">
             <form action="" onsubmit="buscarJuego(event)">
-            <input type="text" name="juegoBuscado" placeholder="Buscar Juegos" autocomplete="off">
+            <input onfocusout="vaciarResultados()" type="text" name="juegoBuscado" placeholder="Buscar Juegos" autocomplete="off" class="in-buscador">
             <input type="submit" value="Buscar">
             </form>
+        <div class="resultados-busqueda">
+
+        </div>
         </div>
 
         <nav class="navbar">
             <ul>
                 <li class="nav-ul-inicio"><a href="">Inicio</a></li>
                 <li class="nav-ul-juegos"><a href="">Juegos</a></li>
-                <li class="nav-ul-contacto"><a href="">Contacto</a></li>
+                <li class="nav-ul-contacto"><a href="#informacion-contacto">Contacto</a></li>            
             </ul>
         </nav>
 
@@ -50,7 +53,13 @@
             </div>
         </div>
 
-        <footer class="footer">Footer</footer>
+        <footer class="footer">
+            <ul id="informacion-contacto" class="informacion-contacto">
+                <li><a target="_blank" href="https://www.linkedin.com/in/esteban-sabinio-330578213/">Linkedin</a></li>
+                <li><a href="">Enviar Mail</a></li>
+                <li><a href="">GitHub</a></li>
+            </ul>
+        </footer>
     </div> 
 </body>
 </html>
